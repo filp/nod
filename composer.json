@@ -3,12 +3,12 @@
     "type" : "library",
     "description" : "Notifications in PHP (notify-send, growl, etc) like that.",
     "keywords" : ["notify", "notify-send", "notifications", "growl", "dbus"],
-    "homepage" : "http://github.com/FilipeD/nod",
+    "homepage" : "http://github.com/filp/nod",
     "license"  : "MIT",
     "authors"  : [
         {
             "name"  : "Filipe Dobreira",
-            "homepage" : "http://github.com/FilipeD/nod"
+            "homepage" : "http://github.com/filp/nod"
         }
     ],
     "require" : { "php" : ">5.3.0" },
