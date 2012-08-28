@@ -53,12 +53,12 @@ interface AdapterInterface
 ##Installation
 ============
 
-**Nod** is available through **[composer](http://getcomposer.org/)**, just drop `filp/Nod` into your `composer.json` and you're good to go:
+**Nod** is available through **[composer](http://getcomposer.org/)**, just drop `filp/nod` into your `composer.json` and you're good to go:
 
 ```javascript
 {
     "require" : {
-        "filp/Nod" : "dev-master"
+        "filp/nod" : "dev-master"
     }
 }
 ```

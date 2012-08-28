@@ -1,7 +1,7 @@
 {
-    "name" : "filp/Nod",
+    "name" : "filp/nod",
     "type" : "library",
-    "description" : "ez-pz desktop notifications for php, because some times you just gotta.",
+    "description" : "Notifications in PHP (notify-send, growl, etc) like that.",
     "keywords" : ["notify", "notify-send", "notifications", "growl", "dbus"],
     "homepage" : "http://github.com/FilipeD/nod",
     "license"  : "MIT",
