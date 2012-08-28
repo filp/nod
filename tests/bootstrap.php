@@ -10,4 +10,9 @@
  * @author   Filipe Dobreira <http://github.com/filp>
  * @license  MIT
  */
-require __DIR__ . '/vendor/autoload.php';
+call_user_func(function() {
+    $loader = require __DIR__ . '/../vendor/autoload.php';
+    $loader->add('Nod\\', __DIR__);
+
+    return $loader;
+});
