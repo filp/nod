@@ -1,0 +1,20 @@
+{
+    "name" : "filp/Nod",
+    "type" : "library",
+    "description" : "ez-pz desktop notifications for php, because some times you just gotta.",
+    "keywords" : ["notify", "notify-send", "notifications", "growl", "dbus"],
+    "homepage" : "http://github.com/FilipeD/nod",
+    "license"  : "MIT",
+    "authors"  : [
+        {
+            "name"  : "Filipe Dobreira",
+            "homepage" : "http://github.com/FilipeD/nod"
+        }
+    ],
+    "require" : { "php" : ">5.3.0" },
+    "autoload" : {
+        "psr-0" : {
+            "Nod" : "src/"
+        }
+    }
+}
