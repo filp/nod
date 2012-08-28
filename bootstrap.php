@@ -11,12 +11,3 @@
  * @license  MIT
  */
 require __DIR__ . '/vendor/autoload.php';
-call_user_func(function() {
-    $notification = new Nod\Notification;
-    $notification
-      ->setTitle("Test Message!")
-      ->setMessage("a Amanda É FIXE")
-      ->setUrgency("normal")
-      ->setIcon('/usr/share/icons/Faenza/emblems/48/emblem-favorite.png')
-      ->send();
-});
