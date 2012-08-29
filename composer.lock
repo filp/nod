@@ -1,5 +1,5 @@
 {
-    "hash": "991ea9d8fdee394be0dbd14b000abd9b",
+    "hash": "b15f1f22fbf1121b982c4b23172b5e21",
     "packages": [
 
     ],
@@ -8,7 +8,7 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ]
+    "stability-flags": {
+        "mageekguy/atoum": 20
+    }
 }
