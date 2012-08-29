@@ -53,7 +53,7 @@ interface AdapterInterface
 ##Installation
 ============
 
-**Nod** is available through **[composer](http://getcomposer.org/)** ([packagist page](http://packagist.org/packages/filp/nod), just drop `filp/nod` into your `composer.json` and you're good to go:
+**Nod** is available through **[composer](http://getcomposer.org/)** ([packagist page](http://packagist.org/packages/filp/nod)), just drop `filp/nod` into your `composer.json` and you're good to go:
 
 ```javascript
 {
