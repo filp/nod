@@ -13,24 +13,25 @@
 
 namespace Nod\Adapter;
 use Nod\Adapter\AdapterInterface;
-use mageekguy\atoum\writer as AtoumWriterAbstract;
+use mageekguy\atoum\reports\asynchronous as AtoumAsyncReport;
+use mageekguy\atoum\observable as AtoumObservable;
+use mageekguy\atoum\test as AtoumTest;
 
 /**
- * Nod\Adapter\AtoumWriter
+ * Nod\Adapter\AtoumReportProxy
  * Notification redirection adapter for the atoum runner. Can
  * be given to atoum\runner as a writer, and will also work
  * as a transparent proxy otherwise.
  */
-class AtoumWriter extends AtoumWriterAbstract implements AdapterInterface
+class AtoumReportProxy extends AtoumAsyncReport implements AdapterInterface
 {
     /**
      * @see Nod\Adapter\AdapterInterface::__construct
-     * @see mageekguy\atoum\writer::adapter
      */
     protected $childAdapter;
 
     /**
-     * AtoumWriter merely acts as a redirection adapter, and expects
+     * AtoumReportProxy merely acts as a redirection adapter, and expects
      * a second adapter to be provided, to which it redirects.
      * @param Nod\Adapter\AdapterInterface $adapter
      */
@@ -58,18 +59,27 @@ class AtoumWriter extends AtoumWriterAbstract implements AdapterInterface
      * @param  string $icon
      * @return bool
      */
-    public function process()
+    public function process($title = 'atoum', $message = '', $urgency = 'normal', $expiry = 3000, $icon = null)
     {
-        return call_user_func_array($this->childAdapter, func_get_args());
+        return $this->childAdapter->process($title, $message, $urgency, $expiry, $icon);
     }
 
     /**
-     * @see   mageekguy\atoum\writer::write
-     * @see   Nod\Adapter\AtoumWriter::process
-     * @param string $string
+     * @see    mageekguy\atoum\reports\asynchronous::handleEvent
+     * @see    Nod\Adapter\AtoumReportProxy::process
+     * @param  mixed $event
+     * @param  mageekguy\atoum\observable $observable
+     * @return Nod\Adapter\AtoumReportProxy
      */
-    public function write($string)
+    public function handleEvent($event, AtoumObservable $observable)
     {
-        $this->process('atoum', $string, 'normal', 3000);
+        switch($event) {
+            case AtoumTest::fail:
+            case AtoumTest::error:
+            case AtoumTest::exception:
+                $this->process('atoum', 'A test has failed', 'normal', 3000);
+        }
+
+        return $this;
     }
 }
